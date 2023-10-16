@@ -9,9 +9,11 @@ const getBoardsFn = async () => {
 interface UseBoardsOptions {
   initialData: Boards[];
 }
+
+export const useBoardsQueryKey = ["boards"];
 export const useBoards = ({ initialData }: UseBoardsOptions) => {
   return useQuery({
-    queryKey: ["boards"],
+    queryKey: useBoardsQueryKey,
     queryFn: getBoardsFn,
     initialData,
   });
